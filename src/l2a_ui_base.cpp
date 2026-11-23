@@ -111,6 +111,9 @@ csxs::event::EventErrorCode L2A::UI::FormBase::RemoveEventListeners()
 
         if (result != csxs::event::kEventErrorCode_Success)
         {
+            sAIUser->MessageAlert(ai::UnicodeString("event id: ") +
+                                  L2A::UTIL::StringStdToAi(event_data.event_id_) +
+                                  ai::UnicodeString(" error code: ") + L2A::UTIL::IntegerToString(result));
             return result;
         }
     }
